@@ -1,0 +1,29 @@
+/**
+ * Styles for the page component
+ */
+
+@use 'sass/mixins';
+@use 'sass/variables';
+
+.page {
+  // Selector styles
+  font-family: variables.$font-family-default;
+  font-size: 1rem;
+  font-weight: variables.$font-weight-regular;
+  line-height: variables.$line-height-default;
+
+  // @media queries
+  // TODO: add code
+
+  // Pseudo-classes and pseudo-elements
+  // TODO: add code
+
+  // Nested selectors
+  // TODO: add code
+
+  // BEM elements
+  // TODO: add code
+
+  // BEM modifiers
+  // TODO: add code
+}

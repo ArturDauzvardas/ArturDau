@@ -1,0 +1,40 @@
+/// Clear floated content within a container
+/// @group helpers
+@mixin clearfix() {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+/// Accessible element hiding
+/// @group helpers
+@mixin visually-hidden() {
+  position: absolute;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  overflow: hidden;
+}
+
+/// Use a webp background image, but only if the browser supports it
+/// @group helpers
+@mixin webp-background-image($url) {
+  /* Chrome 66+, Edge 79+, Opera 53+, Android Brower 80+ */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    @supports (background-image: -webkit-image-set(url($url) 1x)) {
+      /* stylelint-disable-next-line */
+      background-image: -webkit-image-set(url($url) 1x);
+    }
+  }
+
+  /* FF 66+ */
+  @supports ((flex-basis: max-content)) and ((-moz-appearance: meterbar)) {
+    background-image: url($url);
+  }
+}
